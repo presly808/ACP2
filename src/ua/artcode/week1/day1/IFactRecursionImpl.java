@@ -6,6 +6,7 @@ import java.util.List;
 /**
  * Created by admin on 23.08.2014.
  */
+//TODO : use cache
 public class IFactRecursionImpl implements IFactRecursion {
 
     private int recCounter = 0;
@@ -39,7 +40,7 @@ public class IFactRecursionImpl implements IFactRecursion {
     }
 
     private String makeSpaces(int num){
-        String word = ""; // Immutable, StringBuilder
+        String word = ""; // TODO : Immutable, refactor StringBuilder
         for(int i = 0; i < num; i++){
             word += " ";
         }
