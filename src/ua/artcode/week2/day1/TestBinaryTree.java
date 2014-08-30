@@ -6,7 +6,7 @@ package ua.artcode.week2.day1;
 public class TestBinaryTree {
 
     public static void main(String[] args) {
-        Tree<String> tree = new BinarySearchTree<>();
+        Tree<String> tree = new BinarySearchTree<String>();
 
         tree.add("Olixiy");
         tree.add("Olga");
