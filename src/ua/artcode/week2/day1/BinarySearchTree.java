@@ -30,7 +30,8 @@ public class BinarySearchTree<T> implements Tree<T> {
         if(root == null){
             root = new TreeNode(element, null, null, null);
         } else {
-            Comparable<T> comparable = (Comparable<T>) element;
+            Comparable<T> comparable = (Comparable<T>) element;//Arrays.sort
+
             TreeNode iter = root;
             while (iter != null){
                 if(comparable.compareTo(iter.value) < 0){ //choose way
@@ -64,6 +65,19 @@ public class BinarySearchTree<T> implements Tree<T> {
 
     @Override
     public void print() {
+        print(root);
+    }
+
+    private void print(TreeNode treeNode){
+        if(treeNode == null){
+            return;
+        }
+
+
+        print(treeNode.rChild);
+        System.out.println(treeNode.value);
+        print(treeNode.lChild);
 
     }
+
 }

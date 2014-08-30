@@ -14,6 +14,8 @@ public class TestBinaryTree {
         tree.add("Vania");
         tree.add("Vasia");
         tree.add("Nikita");
+
+        tree.print();
         System.out.println("End");
     }
 

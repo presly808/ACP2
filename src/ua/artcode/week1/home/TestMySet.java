@@ -3,6 +3,7 @@ package ua.artcode.week1.home;
 /**
  * Created by admin on 27.08.2014.
  */
+//Ctrl + N
 public class TestMySet {
     public static void main(String[] args) {
 
