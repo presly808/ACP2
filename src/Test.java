@@ -17,7 +17,7 @@ public class Test {
         System.out.println(recFact(15));
         long pointEnd = System.currentTimeMillis();
         System.out.println("After recursion");
-        System.out.println("Time of work in millis = " + (pointEnd - pointStart));
+        System.out.println("Time of work in millis = " + pointEnd +" "+ pointStart);
 
     }
 
