@@ -11,6 +11,7 @@ public class Test {
     public static void main(String[] args) {
         //sout  + TAb
 
+
         System.out.println("Start main thread");
         Date date = new Date();
         long pointStart = date.getTime();
