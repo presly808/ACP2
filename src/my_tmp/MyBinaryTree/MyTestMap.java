@@ -1,4 +1,4 @@
-package tmp;
+package my_tmp.MyBinaryTree;
 
 import java.util.Map;
 import java.util.Set;
@@ -11,8 +11,8 @@ public class MyTestMap {
     public static void main(String[] args) {
         Map<Integer, String> map = new TreeMap<Integer, String>();
         map.put(1, "Serhy");
-        map.put(2, "Andry");
-        map.put(3, "Olga");
+        map.put(3, "Andry");
+        map.put(2, "Olga");
 
 
         System.out.println(map.get(1));
