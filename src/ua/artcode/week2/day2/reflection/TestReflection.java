@@ -20,7 +20,7 @@ public class TestReflection {
         Employee empl = (Employee) cl.newInstance();
         System.out.println(empl);
 
-        cl.getModifiers()
+        cl.getModifiers();
 
 
     }
