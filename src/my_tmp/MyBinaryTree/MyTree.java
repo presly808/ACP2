@@ -13,14 +13,6 @@ public interface MyTree<T> {
 
     void print();
 
-    void printRoot();
-
-    void printTree();
-
-    void hasNext();
-
-    int treeDeep();
-
     int treeSize();
 
 

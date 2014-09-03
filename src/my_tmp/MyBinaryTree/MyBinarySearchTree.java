@@ -69,40 +69,60 @@ public class MyBinarySearchTree<T> implements MyTree<T> {
                 while (iter != null){   // finding element in tree
                     if (comparable.compareTo(iter.value) == 0){ // if element equals node value
                         if (iter.lChild == null && iter.rChild == null){ // if element has no children
-                            if (comparable.compareTo(iter.parent.value) < 0){   // check which parent link to reset
-                                iter.parent.lChild = null; // reset left parent link
+                            if (iter.equals(root)){ // check is the item is root.
+                                root = iter.rChild;
+                                return;
                             } else {
-                                iter.parent.rChild = null;  // reset right parent link
+                                if (comparable.compareTo(iter.parent.value) < 0){   // check which parent link to reset
+                                    iter.parent.lChild = null; // reset left parent link
+                                } else {
+                                    iter.parent.rChild = null;  // reset right parent link
+                                }
+                                // if we find element too remove and this element have no children
+                                // and this element is not a root
+                                // we just reset parent link from this element to null.
+                                return;
                             }
-                            // if we find element too remove and this element have no children
-                            // we just reset parent link from this element to null.
-                            return;
+
                         } else { // in other case removed element has at least one child.
                             if (iter.lChild != null){ // if left child of element is not null.
-                                TreeNode maxNode = findMax(iter.lChild);    // in this case we find the maximum element in left subtree
-                                if (maxNode.lChild != null){ // if we find maximum element in this subtree it mean
-                                    // this element hasn't right child and we check is he has left child.
-                                    maxNode.parent.rChild = maxNode.lChild; // if maximum element has left child
-                                    // we redirect parent right link on left child of maximum element.
-                                } else { // in other case (if maximum element hasn't left child) we just reset
+                                if (iter.lChild.lChild == null && iter.lChild.rChild == null){
+                                    iter.value = iter.lChild.value;
+                                    iter.lChild = null;
+                                    return;
+                                } else {
+                                    TreeNode maxNode = findMax(iter.lChild);    // in this case we find the maximum element in left subtree
+                                    if (maxNode.lChild != null){ // if we find maximum element in this subtree it mean
+                                        // this element hasn't right child and we check is he has left child.
+                                        maxNode.parent.rChild = maxNode.lChild; // if maximum element has left child
+                                        // we redirect parent right link on left child of maximum element.
+                                        return;
+                                    } else { // in other case (if maximum element hasn't left child) we just reset
                                         // parent right link from this element to null.
-                                    maxNode.parent.rChild = null;
+                                        maxNode.parent.rChild = null;
+                                    }
+                                    iter.value = maxNode.value; // in end replace removed element value to
+                                    return;
                                 }
-                                iter.value = maxNode.value; // in end replace removed element value to
-                                // found value of maximum element in left subtree.
                             } else { // in case if the deleted element hasn't left child, it mean he has right child
                                     // in this case we redirect parent link
-                                if (comparable.compareTo(iter.parent.value) < 0){
-                                    // if parent value > than deleted element value
-                                    iter.parent.lChild = iter.rChild; // parent left child lick redirect on right child of element
-                                    iter.rChild.parent = iter.parent; // and right child parent to element parent.
-                                } else { // in other case if parent value < then deleted value
-                                    iter.parent.rChild = iter.rChild; // parent right child link redirect on right child of element
-                                    iter.rChild.parent = iter.parent; // and right child parent link on element parent.
+                                if (iter.equals(root)){ // check is the item is root.
+                                    root = iter.rChild;
+                                    root.parent = null;
+                                    return;
+                                } else {
+                                    if (comparable.compareTo(iter.parent.value) < 0){
+                                        // if parent value > than deleted element value
+                                        iter.parent.lChild = iter.rChild; // parent left child lick redirect on right child of element
+                                        iter.rChild.parent = iter.parent; // and right child parent to element parent.
+                                    } else { // in other case if parent value < then deleted value
+                                        iter.parent.rChild = iter.rChild; // parent right child link redirect on right child of element
+                                        iter.rChild.parent = iter.parent; // and right child parent link on element parent.
+                                    }
+                                    return;
                                 }
                             }
                         }
-                        return;
                     // in case if this element not equal requested element we go down the tree
                     } else if (comparable.compareTo(iter.value) < 0){
                         iter = iter.lChild; // if requested element < current node value
@@ -110,8 +130,7 @@ public class MyBinarySearchTree<T> implements MyTree<T> {
                         iter = iter.rChild; // if requested element > current node value
                     }
                 }
-            } else {
-                // if deleted element is not contained in this tree
+            } else { // if deleted element is not contained in this tree
                 System.out.println("No " + element + " in tree");
                 return;
             }
@@ -137,56 +156,35 @@ public class MyBinarySearchTree<T> implements MyTree<T> {
     }
 
     @Override
-    public void printRoot() {
-        if (root != null)
-            System.out.println("root is: " + root.value);
-    }
-
-    @Override
     public void print() {
-        System.out.print("Tree:");
+        printRoot();
+        System.out.print("Tree: ");
         print(root);
         System.out.println();
     }
 
+    private void printRoot() {
+        if (root != null)
+            System.out.println("Root is: " + root.value);
+    }
+
     private void print(TreeNode treeNode){
-        if (treeNode == null)
-            return;
+        if (treeNode == null)   return;
 
         print(treeNode.lChild);
-        System.out.print(treeNode.value + "\t");
+        System.out.print(treeNode.value + " ");
         print(treeNode.rChild);
     }
 
-    @Override
-    public void printTree() {
-        printTree(root);
-    }
-
-    private String str = "";
-    private void printTree(TreeNode treeNode){
-        if (treeNode == null) return;
-        printTree(treeNode.lChild);
-        str += "";
-        printTree(treeNode.rChild);
-
-    }
-
-    int iter = 0;
-    @Override
-    public int treeDeep(){
-        hasNext();
-        return iter;
-    }
-
-    @Override
+    @Override // method counting the number of tree nodes
     public int treeSize() {
         hasNext();
         return iter;
     }
 
-    @Override
-    public void hasNext() {
+    int iter = 0;
+
+    private void hasNext() {
         iter = 0;
         hasNext(root);
     }
@@ -198,7 +196,6 @@ public class MyBinarySearchTree<T> implements MyTree<T> {
             iter++;
             hasNext(treeNode.lChild);
             hasNext(treeNode.rChild);
-
         }
     }
 }
