@@ -3,6 +3,7 @@ package ua.artcode.week2.day1;
 public class BinarySearchTree<T> implements iTree<T> {
 
     private TreeNode root;
+    private static int maxTreeDeep;
 
     private class TreeNode{
 
@@ -179,52 +180,63 @@ public class BinarySearchTree<T> implements iTree<T> {
 
     private void printTree(TreeNode treeNode){
 
-        if (treeNode == null){
-            return;
-        }
-        if (treeNode.parent == null) {
-            System.out.println("                   " + treeNode.value.toString());
-        }
-        if (treeNode.leftChild != null){
-            System.out.print("                  " + treeNode.leftChild.value.toString());
-
-        }
-        if (treeNode.rightChild != null){
-            System.out.print(" " + treeNode.rightChild.value.toString());
-            System.out.println("");
-        }
-
-        printTree(treeNode.leftChild);
-        printTree(treeNode.rightChild);
-
 
     }
 
     public int findTreeDeep(){
-        int treeDeep = -1;
+        int treeDeep = 0;
         if (root == null){
             return -1;
         } else {
-            treeDeep = findTreeDeep(root, treeDeep);
-            System.out.println(treeDeep);
-            return findTreeDeep(root, treeDeep);
+            maxTreeDeep = 1;
+            findTreeDeep(root, treeDeep);
+            return maxTreeDeep;
+
         }
     }
 
-    private int findTreeDeep(TreeNode treeNode, int deep){
+    private void findTreeDeep(TreeNode treeNode, int deep){
 
-        if (treeNode == null){
-            return deep;
+       /** deep++;
+        if ((maxTreeDeep - 1) < deep) {
+            maxTreeDeep++;
         }
-
-        if ((treeNode.leftChild != null) && (treeNode.rightChild!=null)){
-            deep++;
+        if (treeNode == null){
+            deep--;
+            maxTreeDeep--;
+            return;
         }
 
         findTreeDeep(treeNode.leftChild, deep);
         findTreeDeep(treeNode.rightChild, deep);
+        */
 
+        deep++;
+        if ((treeNode.leftChild != null) && (treeNode.rightChild) != null){
+            if ((maxTreeDeep - 1) < deep) {
+                maxTreeDeep++;
+            }
+            findTreeDeep(treeNode.leftChild, deep);
+            findTreeDeep(treeNode.rightChild, deep);
+        } else if (treeNode.leftChild != null){
+            if ((maxTreeDeep - 1) < deep) {
+                maxTreeDeep++;
+            }
+            findTreeDeep(treeNode.leftChild, deep);
+        } else if (treeNode.rightChild != null){
+            if ((maxTreeDeep - 1) < deep) {
+                maxTreeDeep++;
+            }
+            findTreeDeep(treeNode.rightChild, deep);
+        } else {
+            deep--;
+            return;
+        }
 
-        return deep;
+        System.out.println(maxTreeDeep);
+    }
+
+    private void buildMatrix(){
+        int[][] matrix = new int[maxTreeDeep][(int) Math.pow(2, maxTreeDeep)];
     }
 }
