@@ -48,6 +48,8 @@ public class BinarySearchTree<T> implements Tree<T> {
                     } else {
                         iter = iter.rChild; // way condition
                     }
+                } else {
+                    return;
                 }
             }
         }
@@ -55,6 +57,23 @@ public class BinarySearchTree<T> implements Tree<T> {
 
     @Override
     public void remove(T element) {
+
+    }
+
+    public int deep(){
+        return deep(root);
+    }
+
+    public int deep(TreeNode treeNode){
+        if(treeNode == null){
+            return 0;
+        }
+
+        int leftReturned = deep(treeNode.lChild);
+        int rightReturned = deep(treeNode.rChild);
+        int max = leftReturned > rightReturned ? leftReturned : rightReturned;
+
+        return max + 1;
 
     }
 

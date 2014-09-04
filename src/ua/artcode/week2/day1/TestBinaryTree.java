@@ -6,16 +6,19 @@ package ua.artcode.week2.day1;
 public class TestBinaryTree {
 
     public static void main(String[] args) {
-        Tree<String> tree = new BinarySearchTree<>();
+        BinarySearchTree<Integer> tree = new BinarySearchTree<>();
 
-        tree.add("Olixiy");
-        tree.add("Olga");
-        tree.add("Viktora");
-        tree.add("Vania");
-        tree.add("Vasia");
-        tree.add("Nikita");
+        tree.add(100);
+        tree.add(50);
+        tree.add(150);
+        tree.add(25);
+        tree.add(10);
+        tree.add(5);
+        tree.add(3);
+        tree.add(1);
 
         tree.print();
+        System.out.println(tree.deep());
         System.out.println("End");
     }
 

@@ -1,3 +1,5 @@
+package ua.artcode.week1.day1;
+
 import java.util.Date;
 
 /**
