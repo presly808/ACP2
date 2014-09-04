@@ -1,4 +1,4 @@
-package homeWork;// Created by Sergey on 31.08.2014.
+package homeWork.collect;// Created by Sergey on 31.08.2014.
 
 public class Employee {
     private String name;

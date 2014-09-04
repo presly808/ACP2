@@ -1,7 +1,5 @@
 package homeWork.collect;// Created by Sergey on 02.09.2014.
 
-import homeWork.Employee;
-
 import java.util.Collection;
 import java.util.Collections;
 import java.util.Iterator;
