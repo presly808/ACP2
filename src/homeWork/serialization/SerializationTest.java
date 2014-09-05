@@ -34,7 +34,7 @@ public class SerializationTest {
         o.writeObject(employee);
         o.flush();
         o.close();
-        System.out.println("1");
+        System.out.println("11");
         ObjectInputStream i = new ObjectInputStream(new FileInputStream("C:\\codeBase\\gitHub\\src\\homeWork\\demo.ser"));
         Employe employe = (Employe) i.readObject();
         i.close();
