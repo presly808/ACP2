@@ -163,7 +163,7 @@ public class BinarySearchTree<T> implements Tree<T> {
 
     @Override
     public void rotateLeft() {
-
+        System.out.println("not ready yet");
     }
 
     private void print(TreeNode treeNode) {
