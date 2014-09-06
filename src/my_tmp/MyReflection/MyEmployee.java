@@ -1,9 +1,11 @@
-package my_tmp.MyReflaction;
+package my_tmp.MyReflection;
+
+import java.io.Serializable;
 
 /**
  * Created by Admin on 31.08.14.
  */
-public class MyEmployee {
+public class MyEmployee implements Serializable{
 
     private String name;
     private double salary;
@@ -22,9 +24,13 @@ public class MyEmployee {
         return this.name;
     }
 
+    public void sayHello(){
+        System.out.println("Hello: " + toString());
+    }
+
     @Override
     public String toString() {
-        String str = "name: " + name + " salary: " + salary + " age: " + age;
-        return str;
+        return "Employee{name:" + name + " salary:" + salary + " age:" + age + "}";
     }
+
 }
