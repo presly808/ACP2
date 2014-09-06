@@ -56,7 +56,7 @@ public class SaveToFileByReflection {
         obj = cl.newInstance();
         for (Field field : cl.getDeclaredFields()){
             field.setAccessible(true);
-            switch (field.getName()){
+            /*switch (field.getName()){
                 case "name":{
                     field.set(obj, hashMap.get(field.getName()));
                     break;
@@ -75,6 +75,58 @@ public class SaveToFileByReflection {
                 default:{
                     break;
                 }
+            }*/
+
+            switch (field.getType().toString()){
+                case "String":{
+                    field.set(obj, hashMap.get(field.getName()));
+                    break;
+                }
+
+                case "Interger":
+                case "int":{
+                    int integr = Integer.parseInt(hashMap.get(field.getName()));
+                    field.set(obj, integr);
+                    break;
+                }
+                case "Float":
+                case "float":{
+                    float fl = Float.parseFloat(hashMap.get(field.getName()));
+                    field.set(obj, fl);
+                    break;
+                }
+                case "Double":
+                case "double":{
+                    double dbl = Double.parseDouble(hashMap.get(field.getName()));
+                    field.set(obj, dbl);
+                    break;
+                }
+                case "Long":
+                case "long":{
+                    long lng = Long.parseLong(hashMap.get(field.getName()));
+                    field.set(obj, lng);
+                    break;
+                }
+                case "Character":
+                case "char": {
+                    char ch = hashMap.get(field.getName()).charAt(0);
+                    field.set(obj, ch);
+                    break;
+                }
+                case "Short":
+                case "short":{
+                    short sh = Short.parseShort(hashMap.get(field.getName()));
+                    field.set(obj, sh);
+                    break;
+                }
+                case "Byte":
+                case "byte":{
+                    byte bt = Byte.parseByte(hashMap.get(field.getName()));
+                    field.set(obj, bt);
+                    break;
+                }
+
+                default: break;
             }
 
         }
