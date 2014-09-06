@@ -15,5 +15,10 @@ public class MyArrayListUnitTest {
         ArrayList arr = new ArrayList();
 
     }
+    @Test
+    public void testAddContains(){
+        ArrayList arr = new ArrayList();
+
+    }
 
 }
