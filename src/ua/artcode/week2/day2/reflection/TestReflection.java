@@ -5,7 +5,7 @@ import java.lang.reflect.Method;
 
 /**
  * Created by admin on 31.08.2014.
- */
+ *
 public class TestReflection {
 
     public static void main(String[] args) throws ClassNotFoundException, IllegalAccessException, InstantiationException {
@@ -52,3 +52,4 @@ public class TestReflection {
 
     }
 }
+*/

@@ -1,19 +1,18 @@
-package ua.artcode.week2.day2.reflection;
+package ua.artcode.week3.day1;
 
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.Serializable;
 
 /**
- * Created by admin on 31.08.2014.
+ * Created by Vishn9 on 06.09.2014.
  */
-public class Employee extends InputStream implements Serializable {
-
+public class ModernEmployee extends InputStream implements Serializable, ModernWorker {
     private String name;
-    private double salary;
+    private double bigSalary;
     private int age;
 
-    public Employee() {
+    public ModernEmployee() {
     }
 
     @Override
@@ -21,9 +20,13 @@ public class Employee extends InputStream implements Serializable {
         return 0;
     }
 
-    public Employee(String name, double salary, int age) {
+    public double getBigSalary() {
+        return bigSalary;
+    }
+
+    public ModernEmployee(String name, double bigSalary, int age) {
         this.name = name;
-        this.salary = salary;
+        this.bigSalary = bigSalary;
         this.age = age;
     }
 
@@ -33,14 +36,10 @@ public class Employee extends InputStream implements Serializable {
 
     @Override
     public String toString() {
-        return "Employee{" +
+        return "ModernEmployee{" +
                 "name='" + name + '\'' +
-                ", salary=" + salary +
+                ", salary=" + bigSalary +
                 ", age=" + age +
                 '}';
-    }
-
-    public double getSalary() {
-        return salary;
     }
 }
