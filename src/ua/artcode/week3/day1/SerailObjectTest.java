@@ -16,10 +16,6 @@ public class SerailObjectTest {
         oos.writeObject(empl);
         oos.close();
         fos.close();
-
-
-
-
     }
 
 
