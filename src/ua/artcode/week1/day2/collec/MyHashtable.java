@@ -13,18 +13,38 @@ public class MyHashtable<E> implements Set<E> {
     private Object[] mas = new Object[16];
     private double loadFactor = 0.75;
 
+    public int hash(Object o){
+        int i = o.hashCode()%mas.length;
+        return Math.abs(i);
+    }
+
     @Override
     public int size() {
-        return 0;
+        int iter = 0;
+        for (Object o : mas){
+            if (o != null){
+                iter++;
+            }
+        }
+        return iter;
     }
 
     @Override
     public boolean isEmpty() {
-        return false;
+        for(Object x: mas){
+            if (x != null)
+                return false;
+        }
+        return true;
     }
 
     @Override
     public boolean contains(Object o) {
+        for (Object x : mas){
+            if (x != null && x.equals(o)){
+                return true;
+            }
+        }
         return false;
     }
 
@@ -35,7 +55,11 @@ public class MyHashtable<E> implements Set<E> {
 
     @Override
     public Object[] toArray() {
-        return new Object[0];
+        Object[] arr = new Object[mas.length];
+        for (int i = 0; i < mas.length; i++){
+            arr[i] = mas[i];
+        }
+        return arr;
     }
 
     @Override
@@ -45,11 +69,18 @@ public class MyHashtable<E> implements Set<E> {
 
     @Override
     public boolean add(E e) {
-        return false;
+            mas[hash(e)] = e;
+            return true;
     }
 
     @Override
     public boolean remove(Object o) {
+        for (int j = 0; j < mas.length; j++){
+            if (mas[j].equals(o)){
+                mas[j] = null;
+                return true;
+            }
+        }
         return false;
     }
 
@@ -65,6 +96,12 @@ public class MyHashtable<E> implements Set<E> {
 
     @Override
     public boolean retainAll(Collection<?> c) {
+    /*
+        Object[] masTmp = new Object[mas.length];
+        masTmp = mas.clone();
+        mas = new Object[mas.length << 1];
+        mas = masTmp.clone();
+        */
         return false;
     }
 
@@ -75,6 +112,17 @@ public class MyHashtable<E> implements Set<E> {
 
     @Override
     public void clear() {
-
+        for (int i = 0; i < mas.length; i++){
+            mas[i] = null;
+        }
+        System.out.println("Clear is ok.");
+    }
+    @Override
+    public String toString() {
+        for (int i = 0; i < mas.length; i++){
+            if (mas[i] != null)
+            System.out.println(mas[i].toString() + " hash= " + hash(mas[i]));
+        }
+        return "ok";
     }
 }
