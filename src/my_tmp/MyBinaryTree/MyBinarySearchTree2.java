@@ -160,7 +160,7 @@ public class MyBinarySearchTree2<T> implements MyTree2<T> {
             Comparable<T> comparable = (Comparable<T>) element;
             while (iter != null){
                 if (comparable.compareTo(iter.value) == 0){
-                    return true;
+                    return (T) iter;
                 } else if (comparable.compareTo(iter.value) < 0){
                     iter = iter.lChild;
                 } else {

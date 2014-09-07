@@ -30,7 +30,10 @@ public class MyEmployee implements Serializable{
 
     @Override
     public String toString() {
-        return "Employee{name:" + name + " salary:" + salary + " age:" + age + "}";
+        return "Employee{name:" +
+                name + " salary:" +
+                salary + " age:" +
+                age + "}";
     }
 
 }

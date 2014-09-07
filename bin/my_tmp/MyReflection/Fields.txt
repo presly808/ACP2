@@ -1,0 +1,3 @@
+name, is accessible: false
+salary, is accessible: false
+age, is accessible: false

@@ -5,3 +5,7 @@
 #Java bin
 *.class
 *.project
+
+#files
+*.txt
+*.file
