@@ -39,7 +39,7 @@ public class TestProcessAnnotation {
 
     @AfterClass
     public static void afterClass(){
-        File root = new File(tempPath);
+        File root = new File(tempPath + File.pathSeparator);
         root.delete();
     }
 
