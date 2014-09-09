@@ -1,0 +1,32 @@
+1. Material
+    JUnit, Annotations, IO(InputStream, OutputStream, Reader, Writer)
+    patterns (Adapter, Decorator)
+    protocol TCP/IP, classes(Socket, ServerSocket, URL)
+
+2. To finish stated tasks
+    2.1. Saving object cut into files (Was started in class see ProcessAnnotation)
+    2.2. Implement loading object from files
+
+3. Write own implementation of Scanner (based on Decorator pattern)
+   -String next()
+   -int nextInt()
+   -String nextLine()
+   -boolean hasNext()
+   -boolean hasNextInt()
+   -useDelemiter(String)
+   -close()
+
+4. Write class Timer, that performs some action in defined period of time
+   - start(long delay, Action action) // Action is your own interface with one method, for ex. see ActionListener inteface
+   - stop()
+
+4. Dynamic sorter
+   Sort numbers which are placed in file with defined frequency
+   Use class Timer above
+
+5*. Write synchronous chat between two machines (use ServerSocket and Socket)
+
+6*. Write universal downloader from ex.ua (That helps us download all files from page)
+    1. First input url address of page
+    2. then parse page and find urls like "/load/{idOfFile}" ex. href="/load/124701188"
+    3. Take url adn download file using URL class
