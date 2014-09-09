@@ -1,9 +1,11 @@
 package ua.artcode.week2.day2.reflection;
 
+import java.io.Serializable;
+
 /**
  * Created by admin on 31.08.2014.
  */
-public class Employee {
+public class Employee implements Serializable {
 
     private String name;
     private double salary;

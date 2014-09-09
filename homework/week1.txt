@@ -1,4 +1,4 @@
-1. Topics
+ 1. Topics
     - OOP principles(Inheritance, Encapsulation, Polymorphism)
     - superclass Object(hashCode, equals, toString)
     - Collections in Java (Set, List, Queue)

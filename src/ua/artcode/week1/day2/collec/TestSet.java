@@ -24,7 +24,7 @@ public class TestSet {
         }
 
         System.out.println("Interator in action");
-        Iterator iter = set.iterator();
+        Iterator<Integer> iter = set.iterator();
 
         while(iter.hasNext()){
             System.out.println(iter.next());
