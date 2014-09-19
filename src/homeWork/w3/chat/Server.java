@@ -13,8 +13,10 @@ public class Server {
         Scanner inPut;
         PrintWriter outPut;
 
+        Socket socket = serverSocket.accept();
+
         while (true){
-            Socket socket = serverSocket.accept();
+
 //            System.out.println(socket.getInetAddress().getCanonicalHostName());
 
             outPut = new PrintWriter(socket.getOutputStream());
