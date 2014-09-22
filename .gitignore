@@ -1,6 +1,7 @@
 #IDEA files
 *.iml
 .idea/
+.gitignore
 
 #Java bin
 *.class
@@ -9,3 +10,7 @@
 #files
 *.file
 *.txt
+*.md
+
+#maven
+.MavenExample/
