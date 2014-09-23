@@ -13,4 +13,4 @@
 *.md
 
 #maven
-.MavenExample/
+.out/

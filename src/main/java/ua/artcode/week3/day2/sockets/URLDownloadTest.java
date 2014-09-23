@@ -34,7 +34,7 @@ public class URLDownloadTest {
              ByteArrayOutputStream baos = new ByteArrayOutputStream();
              FileOutputStream fos = new FileOutputStream(filepath)){
 
-            byte[] buff = new byte[1024];
+            byte[] buff = new byte[1000000];
             int readed = 0;
             while ((readed = is.read(buff)) != -1){
                 baos.write(buff, 0, readed);
