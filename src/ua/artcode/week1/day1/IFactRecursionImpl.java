@@ -10,7 +10,7 @@ import java.util.List;
 public class IFactRecursionImpl implements IFactRecursion {
 
     private int recCounter = 0;
-    private List<Integer> cache = new ArrayList<>(100); // TODO replace by map
+    private List<Integer> cache = new ArrayList(100); // TODO replace by map
 
     @Override
     public Integer rec(Integer value) {

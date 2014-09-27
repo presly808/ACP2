@@ -11,7 +11,7 @@ public class HashTest {
 
     public static void main(String[] args) {
 
-        Set<Worker> hashSet = new HashSet<>();
+        Set<Worker> hashSet = new HashSet();
 
         Worker worker1 = new Worker(1, "Kolia", new Date(), 23);
         Worker worker2 = new Worker(2, "Victor", new Date(), 22);

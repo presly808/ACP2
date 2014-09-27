@@ -11,7 +11,7 @@ import java.util.TreeMap;
 public class TestMap {
 
     public static void main(String[] args) {
-        Map<Integer,String> map = new HashMap<>();
+        Map<Integer,String> map = new HashMap();
         map.put(1, "Serhii");
         map.put(2, "Andriy");
         map.put(3, "Vasia");

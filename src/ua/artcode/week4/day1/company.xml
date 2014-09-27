@@ -1,0 +1,11 @@
+<?xml version = "1.0"?>
+<company>
+    <employee id = "1" gh = "sdf" koko = "12345" >
+        <name>Anton</name>
+        <age>23</age>
+    </employee>
+    <employee id="2">
+        <name>Kir</name>
+        <age>25</age>
+    </employee>
+</company>
