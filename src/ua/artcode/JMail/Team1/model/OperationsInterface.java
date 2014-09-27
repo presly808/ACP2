@@ -7,7 +7,7 @@ import java.util.HashMap;
  */
 public interface OperationsInterface {
 
-    public HashMap getAllMessages();
-    public HashMap getContactsList();
+    public HashMap<Integer, Message> getAllMessages();
+    public HashMap<Integer, Message> getContactsList();
 
 }
