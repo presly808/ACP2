@@ -1,0 +1,23 @@
+1. Theoretical material for repeating
+    Threads synchronization(wait, notify, notifyAll)
+    Sockets(ServerSocket, Socket), XML(DOM, SAX), Logging(java.util.logging.*)
+    Thread, Runnable, sleep, join, start, synchronized
+    class Properties
+
+2. Find file in file system using threads for faster results
+    file paths which have been found, save into one common file results.txt
+
+3. Implement asynchronous chat that allows communication with two and more users
+    Must have
+    - logging (saving history of messages and logging all non-standard situations)
+    - read connections setting(port, max users size, list of banned users)
+        from server_settings.properties (see class Properties)
+    - *  read connections setting(port, max users size, list of banned users)
+                 from server_settings.xml (use SAX)
+    - send message using Serialization
+    -* send message in xml file(generate message using DOM)
+    - for better architecture of application see pattern Observer
+    - don't forget about Swing(patterns MVC, Listener)
+
+
+This is task for team work )
