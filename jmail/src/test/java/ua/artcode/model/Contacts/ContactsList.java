@@ -1,4 +1,4 @@
-package ua.artcode.model;
+package ua.artcode.model.Contacts;
 
 /**
  * Created by bm13 on 27.09.2014.
