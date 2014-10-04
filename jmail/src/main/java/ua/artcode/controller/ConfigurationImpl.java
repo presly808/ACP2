@@ -32,7 +32,7 @@ public class ConfigurationImpl {
 
     public static void applyProperties(Properties settings) throws SQLException, ClassNotFoundException {
         if (Boolean.valueOf(settings.getProperty("DBneeded"))) {
-            DBDao.initDB(settings.getProperty("DBServerHost"), settings.getProperty("DBServerPort"), settings.getProperty("DBSchema"), settings.getProperty("DBuser"), settings.getProperty("DBpassword"));
+            new DBDao().initDB(settings.getProperty("DBServerHost"), settings.getProperty("DBServerPort"), settings.getProperty("DBSchema"), settings.getProperty("DBuser"), settings.getProperty("DBpassword"));
         }
     }
 }
