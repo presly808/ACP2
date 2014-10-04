@@ -3,7 +3,7 @@ package ua.artcode.model.Messages;
 /**
  * Created by bm13 on 27.09.2014.
  */
-public class Message implements MessageInterface {
+public class MessageImpl implements MessageInterface {
     @Override
     public int create(String from, String to, String subject, String body) {
         return 0;

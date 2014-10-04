@@ -13,7 +13,7 @@ public interface ContactsOperationsInterface {
     public void print();
     public int getNextContactId();
 
-    public HashMap<Integer, Contact> getContactsList();
+    public HashMap<Integer, ContactImpl> getContactsList();
 
 
 

@@ -1,26 +1,25 @@
 package ua.artcode.controller;
 
-import ua.artcode.model.Contacts.Contact;
+import ua.artcode.model.Contacts.ContactImpl;
 import ua.artcode.model.Contacts.ContactsOperationsInterface;
 
 import java.util.HashMap;
-import java.util.Set;
 
 /**
  * Created by bm13 on 27.09.2014.
  */
 public class ContactsOperationsController implements ContactsOperationsInterface {
-    HashMap<Integer, Contact> contacts = new HashMap<Integer, Contact>();
+    HashMap<Integer, ContactImpl> contacts = new HashMap<Integer, ContactImpl>();
 
     @Override
     public void add(String firstName, String lastName, String email) {
-        Contact contact = new Contact(firstName, lastName, email);
+        ContactImpl contact = new ContactImpl(firstName, lastName, email);
         contacts.put(getNextContactId(),contact);
     }
 
     @Override
     public void edit(int id, String firstName, String lastName, String email) {
-        Contact contact = contacts.get(id);
+        ContactImpl contact = contacts.get(id);
         contact.edit(firstName, lastName, email);
     }
 
@@ -33,13 +32,13 @@ public class ContactsOperationsController implements ContactsOperationsInterface
     @Override
     public void print() {
         for (int i = 0; i <= contacts.size(); i++){
-            Contact contact = contacts.get(Integer.valueOf(i));
+            ContactImpl contact = contacts.get(Integer.valueOf(i));
                     contact.print();
         }
     }
 
     @Override
-    public HashMap<Integer, Contact> getContactsList() {
+    public HashMap<Integer, ContactImpl> getContactsList() {
         return contacts;
     }
 

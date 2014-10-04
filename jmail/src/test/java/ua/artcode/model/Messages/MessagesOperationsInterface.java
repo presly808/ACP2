@@ -7,5 +7,5 @@ import java.util.HashMap;
  */
 public interface MessagesOperationsInterface {
 
-    public HashMap<Integer, Message> getAllMessages();
+    public HashMap<Integer, MessageImpl> getAllMessages();
 }
