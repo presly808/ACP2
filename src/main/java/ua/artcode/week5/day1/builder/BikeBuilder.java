@@ -10,11 +10,8 @@ public class BikeBuilder{
     public BikeBuilder() {
     }
 
-    public BikeBuilder(Bike original) {
-        this.speed = original.getSpeed();
-        this.model = original.getModel();
-        this.weight = original.getWeight();
-        this.volume = original.getVolume();
+    public BikeBuilder(BikeBuilder original) {
+
     }
 
     public BikeBuilder speed(float speed){
@@ -37,8 +34,8 @@ public class BikeBuilder{
         return this;
     }
 
-    public Bike build(){
+    /*public Bike build(){
         return new Bike(this);
-    }
+    }*/
 }
 
