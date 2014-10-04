@@ -10,7 +10,7 @@ import java.util.Properties;
 /**
  * Created by bm13 on 03.10.2014.
  */
-public class ConfigurationController {
+public class ConfigurationImpl {
     private static String separator = System.getProperty("file.separator");
 
     public static Properties initProperties() throws IOException {

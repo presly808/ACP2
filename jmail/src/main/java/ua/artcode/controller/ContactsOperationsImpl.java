@@ -1,6 +1,6 @@
 package ua.artcode.controller;
 
-import ua.artcode.model.Contacts.ContactImpl;
+import ua.artcode.controller.ContactImpl;
 import ua.artcode.model.Contacts.ContactsOperationsInterface;
 
 import java.util.HashMap;
@@ -8,7 +8,7 @@ import java.util.HashMap;
 /**
  * Created by bm13 on 27.09.2014.
  */
-public class ContactsOperationsController implements ContactsOperationsInterface {
+public class ContactsOperationsImpl implements ContactsOperationsInterface {
     HashMap<Integer, ContactImpl> contacts = new HashMap<Integer, ContactImpl>();
 
     @Override

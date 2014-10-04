@@ -1,5 +1,7 @@
 package ua.artcode.model.Contacts;
 
+import ua.artcode.controller.ContactImpl;
+
 import java.util.HashMap;
 
 /**

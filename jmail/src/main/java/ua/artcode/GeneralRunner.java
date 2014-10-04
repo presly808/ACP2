@@ -1,6 +1,6 @@
 package ua.artcode;
 
-import ua.artcode.controller.ConfigurationController;
+import ua.artcode.controller.ConfigurationImpl;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -12,8 +12,8 @@ import java.util.Properties;
 public class GeneralRunner {
 
     public static void main(String[] args) throws IOException, SQLException, ClassNotFoundException {
-        Properties settings = ConfigurationController.initProperties();
-        ConfigurationController.applyProperties(settings);
+        Properties settings = ConfigurationImpl.initProperties();
+        ConfigurationImpl.applyProperties(settings);
     }
 
 }

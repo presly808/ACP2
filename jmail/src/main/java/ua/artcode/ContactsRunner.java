@@ -1,6 +1,6 @@
 package ua.artcode;
 
-import ua.artcode.controller.ContactsOperationsController;
+import ua.artcode.controller.ContactsOperationsImpl;
 
 /**
  * Created by bm13 on 27.09.2014.
@@ -8,7 +8,7 @@ import ua.artcode.controller.ContactsOperationsController;
 public class ContactsRunner {
     public static void main(String[] args) {
 
-        ContactsOperationsController contactsController = new ContactsOperationsController();
+        ContactsOperationsImpl contactsController = new ContactsOperationsImpl();
 
         for (int i = 0; i < 10; i++){
             String name = "Name"+i;

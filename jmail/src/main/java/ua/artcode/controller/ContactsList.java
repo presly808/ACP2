@@ -1,4 +1,4 @@
-package ua.artcode.model.Contacts;
+package ua.artcode.controller;
 
 /**
  * Created by bm13 on 27.09.2014.

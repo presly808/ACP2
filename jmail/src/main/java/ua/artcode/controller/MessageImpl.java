@@ -1,4 +1,6 @@
-package ua.artcode.model.Messages;
+package ua.artcode.controller;
+
+import ua.artcode.model.Messages.MessageInterface;
 
 /**
  * Created by bm13 on 27.09.2014.

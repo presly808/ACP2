@@ -1,5 +1,7 @@
 package ua.artcode.model.Messages;
 
+import ua.artcode.controller.MessageImpl;
+
 import java.util.HashMap;
 
 /**
