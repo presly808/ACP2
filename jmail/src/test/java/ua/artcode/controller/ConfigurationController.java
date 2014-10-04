@@ -1,13 +1,11 @@
 package ua.artcode.controller;
 
-import java.io.File;
+import ua.artcode.dao.DBDao;
+
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.sql.SQLException;
-import java.util.HashMap;
 import java.util.Properties;
-import java.util.Scanner;
 
 /**
  * Created by bm13 on 03.10.2014.
@@ -34,7 +32,7 @@ public class ConfigurationController {
 
     public static void applyProperties(Properties settings) throws SQLException, ClassNotFoundException {
         if (Boolean.valueOf(settings.getProperty("DBneeded"))) {
-            DBController.initDB(settings.getProperty("DBServerHost"),settings.getProperty("DBServerPort"),settings.getProperty("DBSchema"),settings.getProperty("DBuser"),settings.getProperty("DBpassword"));
+            DBDao.initDB(settings.getProperty("DBServerHost"), settings.getProperty("DBServerPort"), settings.getProperty("DBSchema"), settings.getProperty("DBuser"), settings.getProperty("DBpassword"));
         }
     }
 }

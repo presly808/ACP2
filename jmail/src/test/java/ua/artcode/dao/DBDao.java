@@ -1,11 +1,11 @@
-package ua.artcode.controller;
+package ua.artcode.dao;
 
 import java.sql.*;
 
 /**
  * Created by bm13 on 03.10.2014.
  */
-public class DBController {
+public class DBDao {
 
     private static String DB_URL;
     private static String USER;
