@@ -23,6 +23,11 @@ public class DBController {
         connection = DriverManager.getConnection(DB_URL,USER,PASS);
         System.out.println("Connected to database...");
 
+        testSelect();
+    }
+
+    public static void testSelect() throws SQLException {
+
         stmt = connection.createStatement();
         ResultSet rs = stmt.executeQuery("select * from users");
         while (rs.next()) {
@@ -30,7 +35,7 @@ public class DBController {
         }
         rs.close();
         stmt.close();
-    }
 
+    }
 
 }

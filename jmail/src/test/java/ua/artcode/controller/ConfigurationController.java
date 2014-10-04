@@ -16,17 +16,17 @@ public class ConfigurationController {
     private static String separator = System.getProperty("file.separator");
 
     public static Properties initProperties() throws IOException {
-        String configFilePath = "\\jmail\\src\\test\\java\\ua\\artcode\\config\\env.properties";
+        String configFilePath = "jmail\\src\\test\\java\\ua\\artcode\\config\\env.properties";
 
         String path = configFilePath.replace("\\",separator);
 
         Properties settings = new Properties();
-        settings.load(new FileInputStream(System.getProperty("user.dir") + path));
-        
+        settings.load(new FileInputStream(path));
+
         for ( String i : settings.stringPropertyNames()) {
             System.out.println(i + "=" + settings.getProperty(i));
         }
-        
+
         return settings;
     }
 
