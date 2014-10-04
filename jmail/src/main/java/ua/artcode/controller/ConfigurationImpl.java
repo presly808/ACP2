@@ -14,7 +14,7 @@ public class ConfigurationImpl {
     private static String separator = System.getProperty("file.separator");
 
     public static Properties initProperties() throws IOException {
-        String configFilePath = "jmail\\src\\test\\java\\ua\\artcode\\config\\env.properties";
+        String configFilePath = "jmail\\src\\main\\java\\ua\\artcode\\config\\env.properties";
 
         String path = configFilePath.replace("\\",separator);
 
