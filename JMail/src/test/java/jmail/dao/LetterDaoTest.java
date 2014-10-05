@@ -4,6 +4,7 @@ import jmail.model.Letter;
 import jmail.model.User;
 import jmail.service.UserService;
 import jmail.service.UserServiceImpl;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -24,11 +25,10 @@ public class LetterDaoTest {
     //todo think about id of user
     @Before
     public void addUsers(){
-        user1 = new User(1,"ricky8", "1234");
-        user2 = new User(2, "vova22", "1234");
-        userDao.create(user1);
-        userDao.create(user2);
-
+        user1 = userDao.create(new User("ricky8", "1234"));
+        user2 = userDao.create(new User("vova22", "1234"));
+        Assert.assertNotNull(userDao.find(user1.getLogin()));
+        Assert.assertNotNull(userDao.find(user2.getLogin()));
     }
 
     @Test

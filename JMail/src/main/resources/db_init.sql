@@ -1,7 +1,12 @@
 -- CREATE DATABASE jmail;
+DROP SCHEMA IF EXISTS jmail;
 
-DROP TABLE letters IF EXISTS;
-DROP TABLE users IF EXISTS;
+CREATE SCHEMA jmail;
+
+use jmail;
+
+DROP TABLE IF EXISTS letters;
+DROP TABLE IF EXISTS users;
 
 CREATE TABLE users(
   user_id int NOT NULL UNIQUE AUTO_INCREMENT,
@@ -21,4 +26,7 @@ CREATE TABLE letters(
   FOREIGN KEY (to_user) REFERENCES users(user_id),
   FOREIGN KEY (from_user) REFERENCES users(user_id)
 );
+
+
+
 

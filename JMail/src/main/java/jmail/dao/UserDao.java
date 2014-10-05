@@ -11,7 +11,7 @@ public interface UserDao {
 
     public User find(String login);
 
-    public void create(User user);
+    public User create(User user);
 
     public boolean update(User user);
 

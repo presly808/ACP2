@@ -10,29 +10,38 @@ import java.util.Properties;
 /**
  * Created by admin on 04.10.2014.
  */
+//TODO refactor, do singleton or ...
 public class DBConnectionFactory {
 
-    private static String HOST;
-    private static String PORT;
-    private static String USER;
-    private static String PASS;
+    private final String HOST;
+    private final String PORT;
+    private final String USER;
+    private final String PASS;
+    private static DBConnectionFactory INSTANCE = null;
 
-    static {
-        Properties properties = new Properties();
-        try {
-            properties.load(new FileInputStream("JMail/src/main/resources/db.properties"));
-            HOST = properties.getProperty("db.host");
-            PORT = properties.getProperty("db.port");
-            USER = properties.getProperty("db.user");
-            PASS = properties.getProperty("db.pass");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+    public DBConnectionFactory(String HOST, String PORT, String USER, String PASS) {
+        this.HOST = HOST;
+        this.PORT = PORT;
+        this.USER = USER;
+        this.PASS = PASS;
     }
 
-
     public static Connection getConnection() throws SQLException {
-        return DriverManager.getConnection(String.format("jdbc:mysql://%s:%s/%s", HOST, PORT, "jmail"), USER, PASS);
+        if(INSTANCE == null){
+            Properties properties = new Properties();
+            try {
+                properties.load(new FileInputStream("JMail/src/main/resources/db.properties"));
+                String host = properties.getProperty("db.host");
+                String port = properties.getProperty("db.port");
+                String user = properties.getProperty("db.user");
+                String pass = properties.getProperty("db.pass");
+                INSTANCE = new DBConnectionFactory(host, port, user, pass);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        return DriverManager.getConnection(String.format("jdbc:mysql://%s:%s/%s", INSTANCE.HOST, INSTANCE.PORT, "jmail"),
+                INSTANCE.USER, INSTANCE.PASS);
     }
 
 
