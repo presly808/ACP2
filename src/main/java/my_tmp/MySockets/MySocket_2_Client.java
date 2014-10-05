@@ -26,7 +26,12 @@ public class MySocket_2_Client {
         while (true){
             String message = reader.readLine();
             out.println(message);
+            System.out.println(message);
             out.flush();
+            if (message.equals("stop")){
+                sock.close();
+                return;
+            }
         }
 
     }
