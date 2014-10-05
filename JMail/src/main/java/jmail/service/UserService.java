@@ -9,6 +9,8 @@ import java.util.List;
  */
 public interface UserService {
 
-    public List<User> getAllContacts(String login);
+    public void sendMessage(String to, String title, String body);
+
+
 
 }
