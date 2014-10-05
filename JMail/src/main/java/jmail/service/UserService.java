@@ -1,5 +1,6 @@
 package jmail.service;
 
+import jmail.model.Letter;
 import jmail.model.User;
 
 import java.util.List;
@@ -9,8 +10,8 @@ import java.util.List;
  */
 public interface UserService {
 
-    public void sendMessage(String to, String title, String body);
+    public void sendMessage(String from, String to, String title, String body);
 
-
+    public List<Letter> allLettersByUserLogin();
 
 }

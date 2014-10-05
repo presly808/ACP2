@@ -10,8 +10,8 @@ DROP TABLE IF EXISTS users;
 
 CREATE TABLE users(
   user_id int NOT NULL UNIQUE AUTO_INCREMENT,
-  login VARCHAR(20),
-  pass VARCHAR(20),
+  login VARCHAR(255),
+  pass VARCHAR(255),
   PRIMARY KEY (user_id)
 );
 

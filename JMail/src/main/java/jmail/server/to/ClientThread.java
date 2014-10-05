@@ -12,6 +12,7 @@ public class ClientThread implements Runnable {
 
     private Socket client;
 
+
     public ClientThread(Socket client) {
         this.client = client;
     }

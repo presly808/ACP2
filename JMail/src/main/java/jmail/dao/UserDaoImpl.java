@@ -17,6 +17,32 @@ import java.util.List;
 public class UserDaoImpl implements UserDao {
 
 
+    @Override
+    public User findById(int id) {
+        Connection connection = null;
+        Statement statement = null;
+        User user = null;
+        try {
+            connection = DBConnectionFactory.getConnection();
+            statement =  connection.createStatement();
+            ResultSet rs = statement.executeQuery(String.format(
+                    "SELECT user_id, login, pass FROM users WHERE user_id=%d", id));
+            while (rs.next()){
+                user = convert(rs);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            if(connection != null){
+                try {
+                    connection.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+        return user;
+    }
 
     @Override
     public User find(String login) {
@@ -28,9 +54,9 @@ public class UserDaoImpl implements UserDao {
             statement =  connection.createStatement();
             ResultSet rs = statement.executeQuery(String.format(
                     "SELECT user_id, login, pass FROM users WHERE login='%s'", login));
-            while (rs.next()){
-                user = convert(rs);
-            }
+
+            user = convert(rs);
+
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {
