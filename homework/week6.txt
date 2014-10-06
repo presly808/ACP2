@@ -1,0 +1,16 @@
+1. Material
+    - Transactions in DB(ACID), Transactions in JDBC
+    - Normalizing databases, 1NF, 2NF, 3NF
+    - ORM
+
+
+2. Finish Jmail - don't change master branch(create you own for this work)
+    2.1 Implement all methods in interfaces(LetterDao, UserDao, UserService)
+        Write new methods if you need, don't be afraid
+    2.2 Finish classes for connection by TCP/IP(Sockets)
+    2.3 Dont forget about tests
+    2.4* Implement easy GUI
+    2.5 Use logging, validation
+    2.6 Make transferring data more comfortable using TransferObject
+
+3. FOR CLIENT do separate Module in IDEA
