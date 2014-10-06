@@ -5,7 +5,7 @@ import java.io.ObjectOutputStream;
 import java.net.Socket;
 
 /**
- * Created by admin on 05.10.2014.
+ * TODO TEST Client, I recommend you to create separate project for client
  */
 public class ClientRun {
 

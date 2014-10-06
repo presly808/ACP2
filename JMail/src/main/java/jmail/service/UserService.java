@@ -12,6 +12,13 @@ public interface UserService {
 
     public void sendMessage(String from, String to, String title, String body);
 
+    public List getUnreadLetters(String login);
+
     public List<Letter> allLettersByUserLogin();
+
+    public void registerUser(String login, String pass);
+
+    public void singIn(String login, String pass);
+
 
 }

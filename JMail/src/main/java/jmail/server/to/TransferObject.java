@@ -3,6 +3,8 @@ package jmail.server.to;
 import jmail.model.User;
 
 import java.io.Serializable;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Created by admin on 05.10.2014.
@@ -13,6 +15,12 @@ public class TransferObject implements Serializable {
     private String login;
     private String pass;
     private String action; //todo replace by enum
+    /*
+    * Map for transfer data, like user, letter
+    * ex. key=letter_tittle value=Some letter title
+    *     key=letter_body   value=Hi my friend, how are you?
+    * */
+    public Map<String, Object> map = new HashMap<>(32);
 
     public String getLogin() {
 
