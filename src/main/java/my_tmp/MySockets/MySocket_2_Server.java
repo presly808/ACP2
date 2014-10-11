@@ -16,7 +16,9 @@ public class MySocket_2_Server implements Runnable{
 
     public static void main(String[] args) throws Exception {
         MySocket_2_Server server = new MySocket_2_Server();
-        server.run();
+        while (true){
+            server.run();
+        }
     }
 
     public void run() {
