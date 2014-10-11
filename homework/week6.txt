@@ -3,7 +3,6 @@
     - Normalizing databases, 1NF, 2NF, 3NF
     - ORM
 
-
 2. Finish Jmail - don't change master branch(create you own for this work)
     2.1 Implement all methods in interfaces(LetterDao, UserDao, UserService)
         Write new methods if you need, don't be afraid
