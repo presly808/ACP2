@@ -19,6 +19,7 @@ public class TestJPARemove {
         EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("my_unit");
         EntityManager entityManager = entityManagerFactory.createEntityManager();
 
+
         EntityTransaction transaction = entityManager.getTransaction();
         transaction.begin();
         transaction.commit();

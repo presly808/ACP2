@@ -3,6 +3,7 @@ package ua.artcode.week7.day1;
 import ua.artcode.week7.day1.entities.Address;
 import ua.artcode.week7.day1.entities.Author;
 import ua.artcode.week7.day1.entities.Book;
+import ua.artcode.week7.day1.entities.BookType;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -20,11 +21,10 @@ public class TestCascade {
         EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("my_unit");
         EntityManager entityManager = entityManagerFactory.createEntityManager();
 
-
-
         Author author = new Author("Viktor3", 30, 20000, new Date());
         for (int i = 0; i < 10; i++) {
             Book e = new Book("SOME-" + i, "DESC-" + i);
+            e.setBookType(i % 2 == 0 ? BookType.JOURNAL : BookType.BOOK);
             e.setAuthor(author);
             author.getBooks().add(e);
         }
