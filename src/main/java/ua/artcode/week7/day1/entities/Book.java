@@ -18,7 +18,7 @@ public class Book {
     @Enumerated(EnumType.STRING)
     private BookType bookType;
 
-
+    @ManyToOne
     @JoinColumn(name = "author_id", referencedColumnName = "id")
     private Author author;
 
