@@ -18,6 +18,21 @@ public class LetterDAoImpl implements LetterDao {
 
 
     @Override
+    public Letter findById(int id) {
+        return null;
+    }
+
+    @Override
+    public Letter findByDateRange(Date start, Date end) {
+        return null;
+    }
+
+    @Override
+    public List<Letter> findByKeyWord(String keyWord) {
+        return null;
+    }
+
+    @Override
     public void create(Letter letter) {
         Connection connection = null;
         Statement statement = null;
@@ -40,6 +55,16 @@ public class LetterDAoImpl implements LetterDao {
                 }
             }
         }
+    }
+
+    @Override
+    public void update(Letter letter) {
+
+    }
+
+    @Override
+    public void delete(int id) {
+
     }
 
     @Override
