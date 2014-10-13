@@ -1,5 +1,6 @@
 package jmail.model;
 
+import javax.persistence.Column;
 import java.util.Date;
 
 /**

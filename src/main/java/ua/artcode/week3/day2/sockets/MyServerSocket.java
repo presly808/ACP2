@@ -17,7 +17,7 @@ public class MyServerSocket {
             Socket socket = serverSocket.accept();//
             System.out.println(socket.getInetAddress().getCanonicalHostName());
             PrintWriter pw = new PrintWriter(socket.getOutputStream());
-            pw.println("Hello remote");
+            pw.println("Hello ua.artcode.week7.day2.rmi.remote");
             pw.flush();
         }
     }
