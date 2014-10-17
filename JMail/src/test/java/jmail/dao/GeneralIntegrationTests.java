@@ -2,8 +2,6 @@ package jmail.dao;
 
 import jmail.model.Letter;
 import jmail.model.User;
-import jmail.service.UserService;
-import jmail.service.UserServiceImpl;
 import org.junit.*;
 import org.junit.runners.MethodSorters;
 
@@ -18,7 +16,7 @@ import java.util.UUID;
 public class GeneralIntegrationTests {
 
     private static UserDao userDao = new UserDaoImpl();
-    private static LetterDao letterDao = new LetterDaoImpl();
+    private static LetterDao letterDao = new LetterDAoImpl();
 
     private static User user1 = null;
     private static User user2 = null;

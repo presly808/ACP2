@@ -1,7 +1,7 @@
 package jmail.service;
 
+import jmail.dao.LetterDAoImpl;
 import jmail.dao.LetterDao;
-import jmail.dao.LetterDaoImpl;
 import jmail.dao.UserDao;
 import jmail.dao.UserDaoImpl;
 import jmail.model.Letter;
@@ -16,7 +16,7 @@ import java.util.List;
 public class UserServiceImpl implements UserService {
 
     private UserDao userDao = new UserDaoImpl();
-    private LetterDao letterDao = new LetterDaoImpl();
+    private LetterDao letterDao = new LetterDAoImpl();
 
     @Override
     public void sendMessage(String from ,String to, String title, String body) {
@@ -27,7 +27,22 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    public List getUnreadLetters(String login) {
+        return null;
+    }
+
+    @Override
     public List<Letter> allLettersByUserLogin() {
         return null;
+    }
+
+    @Override
+    public void registerUser(String login, String pass) {
+
+    }
+
+    @Override
+    public void singIn(String login, String pass) {
+
     }
 }

@@ -1,0 +1,21 @@
+1. JPA
+    1.1. Entity (Lifecycle of entity)
+        Annotation(@Entity, @Table, @Id, @Column)
+
+    1.2. Relation between entities(one directional, bidirectional)
+        @OneToMane @OneToOne @ManyToOne
+        Fetch type, Cascade type
+
+    1.3. Managing Entities
+        EntityManagerFactory - must be one for application
+        EntityManager (see Persistence Context and lifecycle)
+
+    1.4. see persistence.xml for configuration
+
+    1.5. See JPQL for creating oop query for database
+
+2. Change JMail using JPA instead JDBC
+
+3. pattern Proxy (Where in Hibernate use pattern Proxy)
+      3.1. see RMI structure
+
