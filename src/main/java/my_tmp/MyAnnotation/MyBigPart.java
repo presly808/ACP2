@@ -5,7 +5,7 @@ package my_tmp.MyAnnotation;
  */
 public class MyBigPart {
 
-    @MyForSave(path = "D://Java//ACP2//src//my_tmp//MyAnnotation//BigPart.txt")
+    @MyForSave(path = "D://Java//ACP2//src//main//java//my_tmp//MyAnnotation//BigPart.txt")
     private String desc;
     private int count;
     private double amount;
