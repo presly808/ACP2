@@ -3,7 +3,10 @@ package jmail.dao;
 import jmail.model.Letter;
 import jmail.model.User;
 import org.junit.*;
+import org.junit.runner.RunWith;
 import org.junit.runners.MethodSorters;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import java.util.Date;
 import java.util.List;
@@ -12,6 +15,7 @@ import java.util.UUID;
 /**
  * Created by admin on 04.10.2014.
  */
+@Ignore
 @FixMethodOrder(MethodSorters.DEFAULT)
 public class GeneralIntegrationTests {
 
