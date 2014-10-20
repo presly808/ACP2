@@ -1,18 +1,29 @@
 package jmail.model;
 
-import javax.persistence.Column;
+import javax.persistence.*;
 import java.util.Date;
 
 /**
  * Created by admin on 28.09.2014.
  */
+@Entity
+@Table(name = "LETTERS")
 public class Letter {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String title;
     private String body;
+
+    @ManyToOne
+    @JoinColumn(name = "to_id", referencedColumnName = "id")
     private User to;
+
+    @ManyToOne
+    @JoinColumn(name = "from_id", referencedColumnName = "id")
     private User from;
+
     private Date date;
 
     public Letter() {

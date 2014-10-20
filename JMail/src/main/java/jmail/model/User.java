@@ -1,16 +1,26 @@
 package jmail.model;
 
+import javax.persistence.*;
 import java.util.List;
 
 /**
  * Created by admin on 28.09.2014.
  */
+@Entity
+@Table(name = "USERS")
 public class User {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String login;
     private String pass;
-    private List<Letter> letters;
+
+    @OneToMany(mappedBy = "to")
+    private List<Letter> send;
+
+    @OneToMany(mappedBy = "from")
+    private List<Letter> received;
 
     public User() {
     }
@@ -50,12 +60,20 @@ public class User {
         this.pass = pass;
     }
 
-    public List<Letter> getLetters() {
-        return letters;
+    public List<Letter> getSend() {
+        return send;
     }
 
-    public void setLetters(List<Letter> letters) {
-        this.letters = letters;
+    public void setSend(List<Letter> send) {
+        this.send = send;
+    }
+
+    public List<Letter> getReceived() {
+        return received;
+    }
+
+    public void setReceived(List<Letter> received) {
+        this.received = received;
     }
 
     @Override

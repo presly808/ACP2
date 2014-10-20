@@ -1,0 +1,9 @@
+1. Spring(IoC), DI pattern
+    Spring Context(Configuring using xml, annotations)
+    see Spring 5 chapter
+    http://docs.spring.io/spring/docs/current/spring-framework-reference/htmlsingle/#beans
+
+    Integrate Hibernate with Spring
+
+2. See UserDaoHibTest in Jmail project
+    Write tests using Spring

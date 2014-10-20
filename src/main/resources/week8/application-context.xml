@@ -12,21 +12,23 @@
         http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
 
 
+    <context:annotation-config/>
+    <context:component-scan base-package="ua.artcode.week8.day2"/>
+
+
+    <bean id="service1" class="ua.artcode.week8.day2.MessageService"/>
+    <bean id="service2" class="ua.artcode.week8.day2.LetterService"/>
+
+    <!--<bean id="clientBean2" class="ua.artcode.week8.day2.Client">
+        <property name="iService" ref="service1"/>
+    </bean>
+
+    <bean id="clientBean1" class="ua.artcode.week8.day2.Client">
+        <property name="iService" ref="service2"/>
+    </bean>-->
+
+
     <context:property-placeholder location="week8/db.properties"/>
 
-    <bean id="mainCompany" class="ua.artcode.week8.day1.Company">
-        <constructor-arg name="name" value="Luxsoft"></constructor-arg>
-        <constructor-arg name="employeeCount" value="34"/>
-    </bean>
-
-    <bean id="company2" class="ua.artcode.week8.day1.Company">
-        <property name="name" value="EPAM"/>
-        <property name="employeeCount" value="23"/>
-    </bean>
-
-    <bean id="empl1" class="ua.artcode.week8.day1.Employee">
-        <property name="name" value="${empl.name}"/>
-        <property name="company" ref="mainCompany"/>
-    </bean>
 
 </beans>

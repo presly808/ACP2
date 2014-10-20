@@ -1,12 +1,10 @@
 package jmail.dao;
 
 import jmail.model.Letter;
+import jmail.model.User;
 import jmail.util.DBConnectionFactory;
 
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -16,6 +14,7 @@ import java.util.List;
  */
 public class LetterDAoImpl implements LetterDao {
 
+    private UserDao userDao = new UserDaoImpl();
 
     @Override
     public Letter findById(int id) {
@@ -70,17 +69,24 @@ public class LetterDAoImpl implements LetterDao {
     @Override
     public List<Letter> allByUserLogin(String login) {
         Connection connection = null;
-        Statement statement = null;
+        PreparedStatement statement = null;
         try {
             connection = DBConnectionFactory.getConnection();
-            statement =  connection.createStatement();
+            //statement =  connection.createStatement();
+            statement = connection.prepareStatement("SELECT * FROM letters as l, users as u WHERE u.login=? AND\n" +
+                                                            "(l.from_user=u.user_id OR l.to_user=u.user_id);");
+            statement.setString(1, login);
             //todo write valid query for select
-            String query = null;
-            ResultSet resultSet = statement.executeQuery(query);
+            ResultSet resultSet = statement.executeQuery();
             List<Letter> letters = new ArrayList<>();
             while (resultSet.next()){
-                Letter letter = new Letter(resultSet.getInt("letter_id"), resultSet.getString("title"),
-                        resultSet.getString("body"), null, null, resultSet.getDate("send_date"));
+                int letterId = resultSet.getInt("letter_id");
+                String title = resultSet.getString("title");
+                String body  = resultSet.getString("body");
+                Date date = resultSet.getDate("send_date");
+                User userTo = userDao.findById(resultSet.getInt("to_user"));
+                User userFrom = userDao.findById(resultSet.getInt("from_user"));
+                Letter letter = new Letter(letterId, title, body, userTo, userFrom, date);
                 letters.add(letter);
             }
             return letters;

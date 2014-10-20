@@ -6,6 +6,9 @@ import jmail.dao.UserDao;
 import jmail.dao.UserDaoImpl;
 import jmail.model.Letter;
 import jmail.model.User;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Date;
 import java.util.List;
@@ -13,10 +16,13 @@ import java.util.List;
 /**
  * Created by admin on 04.10.2014.
  */
+@Service(value = "userService")
 public class UserServiceImpl implements UserService {
 
-    private UserDao userDao = new UserDaoImpl();
-    private LetterDao letterDao = new LetterDAoImpl();
+    @Autowired
+    private UserDao userDao;
+    @Autowired
+    private LetterDao letterDao;
 
     @Override
     public void sendMessage(String from ,String to, String title, String body) {
@@ -37,8 +43,10 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    @Transactional
     public void registerUser(String login, String pass) {
-
+        User user = new User(login, pass);
+        userDao.create(user);
     }
 
     @Override
