@@ -1,0 +1,59 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+  <display-name>Archetype Created Web Application</display-name>
+    
+    <servlet>
+        <servlet-name>Hello Servlet</servlet-name>
+        <servlet-class>servlets.HelloServlet</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>ResultServlet</servlet-name>
+        <servlet-class>servlets.ResultServlet</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>ContextTestServlet</servlet-name>
+        <servlet-class>servlets.ContextTestServlet</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>AdditionalTestServlet</servlet-name>
+        <servlet-class>servlets.AdditionalTestServlet</servlet-class>
+    </servlet>
+
+<servlet>
+        <servlet-name>SessionCheckerServlet</servlet-name>
+        <servlet-class>servlets.SessionCheckerServlet</servlet-class>
+    </servlet>
+
+
+    <servlet-mapping>
+        <servlet-name>Hello Servlet</servlet-name>
+        <url-pattern>/hello</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>ResultServlet</servlet-name>
+        <url-pattern>/count</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>ContextTestServlet</servlet-name>
+        <url-pattern>/context</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>AdditionalTestServlet</servlet-name>
+        <url-pattern>/add</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>SessionCheckerServlet</servlet-name>
+        <url-pattern>/check</url-pattern>
+    </servlet-mapping>
+
+</web-app>

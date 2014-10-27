@@ -1,0 +1,50 @@
+16:56:43,611  INFO Version:37 - HCANN000001: Hibernate Commons Annotations {4.0.1.Final}
+16:56:43,642  INFO Version:41 - HHH000412: Hibernate Core {4.2.1.Final}
+16:56:43,642  INFO Environment:239 - HHH000206: hibernate.properties not found
+16:56:43,642  INFO Environment:342 - HHH000021: Bytecode provider name : javassist
+16:56:44,751  INFO DriverManagerConnectionProviderImpl:98 - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+16:56:44,783  INFO DriverManagerConnectionProviderImpl:134 - HHH000115: Hibernate connection pool size: 1
+16:56:44,783  INFO DriverManagerConnectionProviderImpl:137 - HHH000006: Autocommit mode: true
+16:56:44,783  INFO DriverManagerConnectionProviderImpl:151 - HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/test_shop]
+16:56:44,783  INFO DriverManagerConnectionProviderImpl:156 - HHH000046: Connection properties: {user=root, password=****, autocommit=true, release_mode=auto}
+16:56:45,548  INFO Dialect:128 - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+16:56:45,626  INFO LobCreatorBuilder:94 - HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4
+16:56:45,736  INFO TransactionFactoryInitiator:73 - HHH000268: Transaction strategy: org.hibernate.engine.transaction.internal.jdbc.JdbcTransactionFactory
+16:56:45,798  INFO ASTQueryTranslatorFactory:48 - HHH000397: Using ASTQueryTranslatorFactory
+16:56:47,033  INFO SchemaExport:343 - HHH000227: Running hbm2ddl schema export
+16:56:47,079 ERROR SchemaExport:425 - HHH000389: Unsuccessful: alter table AUTHORS drop foreign key FK_f90344c5ba2246fab024cf7c580
+16:56:47,079 ERROR SchemaExport:426 - Table 'test_shop.authors' doesn't exist
+16:56:47,079 ERROR SchemaExport:425 - HHH000389: Unsuccessful: alter table BOOKS drop foreign key FK_bc7ec7c2d23141219918003fbd5
+16:56:47,079 ERROR SchemaExport:426 - Table 'test_shop.books' doesn't exist
+16:56:47,361  INFO SchemaExport:405 - HHH000230: Schema export complete
+17:04:13,298  INFO Version:37 - HCANN000001: Hibernate Commons Annotations {4.0.1.Final}
+17:04:13,329  INFO Version:41 - HHH000412: Hibernate Core {4.2.1.Final}
+17:04:13,329  INFO Environment:239 - HHH000206: hibernate.properties not found
+17:04:13,329  INFO Environment:342 - HHH000021: Bytecode provider name : javassist
+17:04:14,392  INFO DriverManagerConnectionProviderImpl:98 - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+17:04:14,408  INFO DriverManagerConnectionProviderImpl:134 - HHH000115: Hibernate connection pool size: 1
+17:04:14,408  INFO DriverManagerConnectionProviderImpl:137 - HHH000006: Autocommit mode: true
+17:04:14,408  INFO DriverManagerConnectionProviderImpl:151 - HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/test_shop]
+17:04:14,408  INFO DriverManagerConnectionProviderImpl:156 - HHH000046: Connection properties: {user=root, password=****, autocommit=true, release_mode=auto}
+17:04:14,814  INFO Dialect:128 - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+17:04:14,861  INFO LobCreatorBuilder:94 - HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4
+17:04:14,876  INFO TransactionFactoryInitiator:73 - HHH000268: Transaction strategy: org.hibernate.engine.transaction.internal.jdbc.JdbcTransactionFactory
+17:04:14,908  INFO ASTQueryTranslatorFactory:48 - HHH000397: Using ASTQueryTranslatorFactory
+17:04:15,345  INFO SchemaExport:343 - HHH000227: Running hbm2ddl schema export
+17:04:15,376 ERROR SchemaExport:425 - HHH000389: Unsuccessful: alter table AUTHORS drop foreign key FK_a447a89cfb4e4691967b1b18117
+17:04:15,376 ERROR SchemaExport:426 - Can't DROP 'FK_a447a89cfb4e4691967b1b18117'; check that column/key exists
+17:04:15,376 ERROR SchemaExport:425 - HHH000389: Unsuccessful: alter table BOOKS drop foreign key FK_aef7797b94904b2da663c6cc729
+17:04:15,376 ERROR SchemaExport:426 - Can't DROP 'FK_aef7797b94904b2da663c6cc729'; check that column/key exists
+17:04:15,392 ERROR SchemaExport:425 - HHH000389: Unsuccessful: drop table if exists ADDRESSES
+17:04:15,392 ERROR SchemaExport:426 - Cannot delete or update a parent row: a foreign key constraint fails
+17:04:15,392 ERROR SchemaExport:425 - HHH000389: Unsuccessful: drop table if exists AUTHORS
+17:04:15,392 ERROR SchemaExport:426 - Cannot delete or update a parent row: a foreign key constraint fails
+17:04:15,392 ERROR SchemaExport:425 - HHH000389: Unsuccessful: create table ADDRESSES (id integer not null auto_increment, city varchar(255), country varchar(255), street varchar(255), primary key (id))
+17:04:15,392 ERROR SchemaExport:426 - Table 'addresses' already exists
+17:04:15,408 ERROR SchemaExport:425 - HHH000389: Unsuccessful: create table AUTHORS (id integer not null auto_increment, age integer, amount double precision, birthsday datetime, name varchar(255) not null, address_id integer, primary key (id))
+17:04:15,408 ERROR SchemaExport:426 - Table 'authors' already exists
+17:04:15,533  INFO SchemaExport:405 - HHH000230: Schema export complete
+11:28:41,703  INFO ClassPathXmlApplicationContext:510 - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@84f566: startup date [Sun Oct 19 11:28:41 EEST 2014]; root of context hierarchy
+11:28:42,031  INFO XmlBeanDefinitionReader:315 - Loading XML bean definitions from class path resource [week8/application-context.xml]
+11:28:43,046  INFO PropertySourcesPlaceholderConfigurer:172 - Loading properties file from class path resource [week8/db.properties]
+11:28:43,078  INFO DefaultListableBeanFactory:596 - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@11552cd: defining beans [org.springframework.context.support.PropertySourcesPlaceholderConfigurer#0,mainCompany,company2,empl1]; root of factory hierarchy
