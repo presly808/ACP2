@@ -8,9 +8,9 @@ import java.io.OutputStream;
 import java.util.List;
 
 /**
- * Created by admin on 21.10.2014.
+ * pattern Observer(Listener)
  */
-public class OutStreamsContainer {
+ public class OutStreamsContainer {
 
     private List<OutputStream> clientOutputStreamList;
 

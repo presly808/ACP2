@@ -1,0 +1,33 @@
+1.  HTTP protocol, methods of HTTP
+    - structure of web project
+    Tomcat - Servlet Container
+    Servlet API
+    - Servlet - GenericServlet - HttpServlet)
+    - (HttpRequest, HttpResponse)
+    - (Event Listeners)
+    - Cookies and Session
+    - ServletContext - SessionContext - RequestContext
+    - forward vs redirect
+    - web.xml file configuration
+    - JSP (JSTL)
+
+    HTML, CSS - basic for frontend developing
+    http://www.w3schools.com/
+
+2. In jmail must be
+   - Register
+   - Login(with option remember me)
+   - Update info of user
+   - Show letters
+   - Send Letter
+    and others
+
+
+   CREATE ERROR PAGE if SOMETHING GO WRONG
+   and forward to it error messages
+
+    See TODO marks in jmail project
+
+3*. jpda mode run server - for remote debugging
+
+

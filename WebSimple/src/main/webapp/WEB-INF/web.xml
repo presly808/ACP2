@@ -5,6 +5,10 @@
 <web-app>
     <display-name>Archetype Created Web Application</display-name>
 
+    <listener>
+        <listener-class>listener.MySessionListener</listener-class>
+    </listener>
+
     <servlet>
         <servlet-name>HelloServlet</servlet-name>
         <servlet-class>servlets.HelloServlet</servlet-class>
@@ -14,6 +18,26 @@
         <servlet-name>MySessionServlet</servlet-name>
         <servlet-class>servlets.MySessionServlet</servlet-class>
     </servlet>
+
+    <servlet>
+        <servlet-name>ContexServlet</servlet-name>
+        <servlet-class>servlets.ContextTestServlet</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>AdditionalServlet</servlet-name>
+        <servlet-class>servlets.AdditionalTestServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>ContexServlet</servlet-name>
+        <url-pattern>/context</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>AdditionalServlet</servlet-name>
+        <url-pattern>/add</url-pattern>
+    </servlet-mapping>
 
     <servlet-mapping>
         <servlet-name>MySessionServlet</servlet-name>

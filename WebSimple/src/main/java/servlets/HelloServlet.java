@@ -22,10 +22,7 @@ public class HelloServlet extends HttpServlet {
             String key = enumeration.nextElement();
             System.out.println(key + "=" + req.getHeader(key));
         }
-
         // PARAMS req.getParam*
-
-
         PrintWriter pw = resp.getWriter();
         pw.println("");
         pw.print("<h1>FIRST SERVLET</h1>");

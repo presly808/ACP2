@@ -3,9 +3,6 @@ package jmail.model;
 import javax.persistence.*;
 import java.util.List;
 
-/**
- * Created by admin on 28.09.2014.
- */
 @Entity
 @Table(name = "USERS")
 public class User {

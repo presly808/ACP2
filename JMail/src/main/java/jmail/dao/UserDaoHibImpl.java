@@ -55,6 +55,9 @@ public class UserDaoHibImpl implements UserDao {
 
     @Override
     public List<User> all() {
-        return null;
+        EntityManager entityManager = factory.createEntityManager();
+        List<User> users = entityManager.createQuery("SELECT u FROM User u").getResultList();
+        entityManager.close();
+        return users;
     }
 }
