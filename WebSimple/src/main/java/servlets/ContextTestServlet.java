@@ -7,19 +7,23 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.net.ServerSocket;
 import java.util.Arrays;
 import java.util.List;
 
+/**
+ * Created by admin on 26.10.2014.
+ */
 public class ContextTestServlet extends HttpServlet {
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        System.out.println("In context test servlet");
-        List<String> list = Arrays.asList("Andriy", "Vasia", "Oleg");
-        ServletContext sc = req.getServletContext();
+        System.out.println("IN CONTEXT_TEST_SERVLET");
+        List<String> list = Arrays.asList("Adnriy", "Vasia", "Oleg");
         req.setAttribute("names", list);
-
         RequestDispatcher rq = req.getRequestDispatcher("/add");
-        rq.forward(req, resp);
+        rq.forward(req,resp);
+
     }
 
     @Override
