@@ -20,7 +20,7 @@ public class HelloServlet extends HttpServlet {
         System.out.println("HEADERS");
         while(enumeration.hasMoreElements()){
             String key = enumeration.nextElement();
-            System.out.println(key + "=" + req.getHeader(key));
+            System.out.println("key: " + key + "=" + req.getHeader(key));
         }
         PrintWriter pw = resp.getWriter();
         pw.print("HELLO SERVLET");

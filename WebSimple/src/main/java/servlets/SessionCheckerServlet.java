@@ -25,8 +25,11 @@ public class SessionCheckerServlet extends HttpServlet {
         PrintWriter pw = resp.getWriter();
         pw.print(count);
         pw.flush();
-        pw.print("\nLstTime: " + session.getLastAccessedTime() + "" +
-                "\nCurTime: " + new Date().getTime());
+        Date access = new Date();
+        access.setTime(session.getLastAccessedTime());
+        Date date = new Date();
+        pw.print("\nLast Access Time: \t" + access.getHours() + ":" + access.getMinutes() + ":" + access.getSeconds() +
+                "\nCurrent Access Time: \t" + date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds());
         pw.close();
 
     }
