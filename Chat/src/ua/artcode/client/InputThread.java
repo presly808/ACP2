@@ -23,7 +23,7 @@ public class InputThread implements Runnable {
             try {
                 ObjectInputStream objectInputStream = new ObjectInputStream(inputStream);
                 Message message = (Message) objectInputStream.readObject();
-                System.out.println(message);
+                System.out.println(message);//
             } catch (IOException e) {
                 e.printStackTrace();
             } catch (ClassNotFoundException e) {

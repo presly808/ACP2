@@ -4,7 +4,7 @@ import java.io.Serializable;
 import java.util.Date;
 
 /**
- * Created by admin on 21.10.2014.
+ *
  */
 public class Message implements Serializable {
 
